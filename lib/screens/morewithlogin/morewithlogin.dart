@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:housing_app/screens/home/home.dart';
+import 'package:housing_app/screens/home.dart';
 import 'package:housing_app/screens/morewithlogin/about/aboutus.dart';
 import 'package:housing_app/screens/morewithlogin/morewidget.dart';
 import 'package:housing_app/screens/morewithlogin/privacy_policy/privacy_policy.dart';
@@ -58,7 +58,8 @@ class morewithlogin extends StatelessWidget {
                                     fontWeight: FontWeight.w500)),
                           ],
                         ),
-                        Icon(Icons.close)
+                        InkWell(
+                            onTap: () => Get.back(), child: Icon(Icons.close))
                       ],
                     ),
                   )
@@ -75,7 +76,7 @@ class morewithlogin extends StatelessWidget {
               child: Column(
                 children: [
                   more(Icons.home_outlined, "My Listings",
-                      () => Get.to(() => Home())),
+                      () => Get.to(() => HomeScreen())),
                   Divider(
                     height: 1.h,
                   ),
@@ -99,7 +100,8 @@ class morewithlogin extends StatelessWidget {
                   Divider(
                     height: 1.h,
                   ),
-                  more(Icons.logout, "Log Out", () => Get.to(() => Home())),
+                  more(Icons.logout, "Log Out",
+                      () => Get.to(() => HomeScreen())),
                 ],
               ),
             ),
